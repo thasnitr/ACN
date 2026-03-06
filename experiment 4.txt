@@ -1,0 +1,209 @@
+experiment 4
+
+I.
+a)Create a directory named lab1, move into it, create a file data.txt, write some content using echo, and display it using cat.
+(Commands: mkdir, cd, echo, cat)
+mca@MCA13:~/Desktop/s2/ACN$ mkdir lab1
+mca@MCA13:~/Desktop/s2/ACN$ cd lab1
+mca@MCA13:~/Desktop/s2/ACN/lab1$ cat>data.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ echo "Linux Lab Experiment">data.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ cat data.txt
+Linux Lab Experiment
+
+b)Display the last 10 lines of a file and count the number of empty lines. (Commands: tail, grep '^$')
+mca@MCA13:~/Desktop/s2/ACN/lab1$ cat>>data.txt
+
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+It has survived not only five centuries,
+but also the leap into electronic typesetting, 
+remaining essentially unchanged.
+
+It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+and more recently with desktop publishing software like Aldus PageMaker 
+mca@MCA13:~/Desktop/s2/ACN/lab1$  tail -n 10 data.txt
+
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+It has survived not only five centuries,
+but also the leap into electronic typesetting, 
+remaining essentially unchanged.
+
+It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+and more recently with desktop publishing software like Aldus PageMaker 
+mca@MCA13:~/Desktop/s2/ACN/lab1$ grep '^$' data.txt | wc -l
+3
+c)Create a new user student1, set password, create a script file test.sh, change its ownership to student1, and grant execute permission only to the owner. (Commands: useradd, passwd, chown, chmod)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ sudo useradd student11
+[sudo] password for mca: 
+mca@MCA13:~/Desktop/s2/ACN/lab1$ sudo passwd student11
+New password: 
+Retype new password: 
+passwd: password updated successfully
+mca@MCA13:~/Desktop/s2/ACN/lab1$ sudo touch test.sh
+mca@MCA13:~/Desktop/s2/ACN/lab1$ sudo chown student11 test.sh
+mca@MCA13:~/Desktop/s2/ACN/lab1$ sudo chmod 700 test.sh
+mca@MCA13:~/Desktop/s2/ACN/lab1$ ls -l test.sh
+-rwx------ 1 student11 root 0 Mar  6 14:30 test.sh
+
+II.
+a)Create a file students.txt, insert multiple lines using cat, and display lines containing the word "MCA". (Commands: cat, grep)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ cat > students.txt
+Thasni MCA
+Rojina BCA
+Sneha BSC
+Theja BVOCmca@MCA13:~/Desktop/s2/ACN/lab1$ grep "MCA" students.txt
+Thasni MCA
+b)Copy students.txt to backup.txt, rename it to final.txt, and delete the original file. (Commands: cp, mv, rm)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ cp students.txt backup.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ mv backup.txt final.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ rm students.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ ls
+data.txt  final.txt  test.sh
+c)Generate an SSH key pair and copy it to a remote system for password-less login. (Commands: ssh-keygen, ssh-copy-id, ssh)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/mca/.ssh/id_ed25519): key
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in key
+Your public key has been saved in key.pub
+The key fingerprint is:
+SHA256:SqaapBeoPyhtnVl3JwCRpLbgfIbW8U9qS1kn9XWJ7Gg mca@MCA13
+The key's randomart image is:
++--[ED25519 256]--+
+|     .oo         |
+|     .o     . . .|
+|  . +  .  .  o...|
+| o = +  .. .o. . |
+| .= = + S..E..   |
+|...o +.B.o+ .    |
+|.o.o.+*... o     |
+|+o=o+o .         |
+|o++.  .          |
++----[SHA256]-----+
+
+III.
+a)Count the number of words and lines in a file, then display the first 5 lines. (Commands: wc, head)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ wc data.txt
+ 11  82 527 data.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ head -n 5 data.txt
+Linux Lab Experiment
+
+
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+b)Create 3 files and compress them into archive.tar, then extract into a new directory. (Commands: touch, tar, mkdir)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ touch file1.txt file2.txt file3.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ tar -cvf archive.tar file1.txt file2.txt file3.txt
+file1.txt
+file2.txt
+file3.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ mkdir extracted_files
+mca@MCA13:~/Desktop/s2/ACN/lab1$ tar -xvf archive.tar -C extracted_files
+file1.txt
+file2.txt
+file3.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$  ls extracted_files
+file1.txt  file2.txt  file3.txt
+
+c)Search for lines that start with "Error" and do not contain the word "critical". (Commands: grep '^Error', grep -v)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ grep '^Linux' data.txt | grep -v "pen"
+Linux Lab Experiment
+
+IV.
+a)Create a file using echo, append additional content using redirection (>>), and display using less. (Commands: echo, >>, less)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ echo "Linux Operating System" > sample.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ echo "Shell Scripting Basics" >> sample.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ less sample.txt
+Linux Operating System
+Shell Scripting Basics
+~
+~
+~
+~
+~
+~
+~
+~
+b)Grant read and write permission to the group for final.txt, and verify permissions.(Commands: chmod, ls -l)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ chmod g+rw final.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ ls -l final.txt
+-rw-rw-r-- 1 mca mca 42 Mar  6 14:39 final.txt
+
+c)Display running processes of the current logged-in user in detailed format and show disk usage in human-readable format.
+(Commands: ps, df -h)
+ca@MCA13:~/Desktop/s2/ACN/lab1$ ps -u $USER -f
+UID          PID    PPID  C STIME TTY          TIME CMD
+mca         1505       1  0 13:58 ?        00:00:00 /usr/lib/systemd/systemd --user
+mca         1506    1505  0 13:58 ?        00:00:00 (sd-pam)
+mca         1541    1505  0 13:58 ?        00:00:24 /usr/bin/pipewire
+mca         1542    1505  0 13:58 ?        00:00:00 /usr/bin/pipewire -c filter-cha
+mca         1544    1505  0 13:58 ?        00:00:00 /snap/snapd-desktop-integration
+mca         1545    1505  1 13:58 ?        00:01:03 /usr/bin/wireplumber
+mca         1546    1505  0 13:58 ?        00:00:13 /usr/bin/pipewire-pulse
+mca         1547    1505  0 13:58 ?        00:00:00 /usr/bin/gnome-keyring-daemon -
+mca         1558    1505  0 13:58 ?        00:00:00 /usr/bin/dbus-daemon --session 
+mca         1585    1483  0 13:58 tty2     00:00:00 /usr/libexec/gdm-wayland-sessio
+mca         1600    1585  0 13:58 tty2     00:00:00 /usr/libexec/gnome-session-bina
+mca         1655    1505  0 13:58 ?        00:00:00 /usr/libexec/xdg-document-porta
+mca         1672    1505  0 13:58 ?        00:00:00 /usr/libexec/xdg-permission-sto
+mca         1690    1505  0 13:58 ?        00:00:00 /usr/libexec/gcr-ssh-agent --ba
+mca         1691    1505  0 13:58 ?        00:00:00 /usr/libexec/gnome-session-ctl 
+mca         1706    1505  0 13:58 ?        00:00:00 /usr/libexec/gvfsd
+
+mca@MCA13:~/Desktop/s2/ACN/lab1$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.6G  2.4M  1.6G   1% /run
+/dev/nvme0n1p6  181G   48G  124G  28% /
+tmpfs           7.7G     0  7.7G   0% /dev/shm
+tmpfs           5.0M  8.0K  5.0M   1% /run/lock
+efivarfs        256K  127K  125K  51% /sys/firmware/efi/efivars
+/dev/nvme0n1p1   96M   33M   64M  34% /boot/efi
+tmpfs           1.6G  128K  1.6G   1% /run/user/1000
+
+V.
+a)Find all .txt files in the current directory and show their details.
+(Commands: find, ls)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ find . -name "*.txt"
+./file2.txt
+./file3.txt
+./file1.txt
+./sample.txt
+./extracted_files/file2.txt
+./extracted_files/file3.txt
+./extracted_files/file1.txt
+./data.txt
+./final.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ ls -l *.txt
+-rw-rw-r-- 1 mca mca 527 Mar  6 14:22 data.txt
+-rw-rw-r-- 1 mca mca   0 Mar  6 15:07 file1.txt
+-rw-rw-r-- 1 mca mca   0 Mar  6 15:07 file2.txt
+-rw-rw-r-- 1 mca mca   0 Mar  6 15:07 file3.txt
+-rw-rw-r-- 1 mca mca  42 Mar  6 14:39 final.txt
+-rw-rw-r-- 1 mca mca  46 Mar  6 15:14 sample.txt
+
+b)Extract the first column from a file using cut, combine it with another file using paste, and save the output using redirection.(Commands: cut, paste, >)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ cat > file1.txt
+1 Thasni       
+2 Aneesa
+3 Alfiya
+4 Nandana
+mca@MCA13:~/Desktop/s2/ACN/lab1$ cat > file2.txt
+BCA
+MCA
+BSC
+BCOM
+mca@MCA13:~/Desktop/s2/ACN/lab1$ cut -d " " -f1 file1.txt
+1
+2
+3
+4
+c)Monitor system processes using top, exit the command properly, then list current directory contents with detailed permissions. (Commands: top, ls -l)
+mca@MCA13:~/Desktop/s2/ACN/lab1$ cut -d " " -f1 file1.txt | paste - file2.txt > result.txt
+mca@MCA13:~/Desktop/s2/ACN/lab1$ cat result.txt
+1	BCA
+2	MCA
+3	BSC
+4	BCOM
+
