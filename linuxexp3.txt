@@ -1,0 +1,790 @@
+
+1.man
+
+mca@MCA11:~/Thasni/LINUX$ man ls
+
+[3]+  Stopped                 man ls
+
+2.pwd
+
+mca@MCA11:~/Thasni/LINUX$ pwd
+/home/mca/Thasni/LINUX
+
+3.ls
+
+mca@MCA11:~/Thasni/LINUX$ ls 
+Thasni.txt  d1,d2,d3,d4,d5  f1.txt  Student.class  Student.java
+mca@MCA11:~/Thasni/LINUX$ ls -l
+total 20
+-rw-rw-r-- 1 mca mca    7 Feb 20 14:45 Thasni.txt
+drwxrwxr-x 2 mca mca 4096 Feb 20 14:37 d1,d2,d3,d4,d5
+-rw-rw-r-- 1 mca mca   22 Mar  2 11:01 f1.txt
+-rw-rw-r-- 1 mca mca 2204 Feb 25 09:44 Student.class
+-rw-rw-r-- 1 mca mca 1246 Feb 25 09:44 Student.java
+mca@MCA11:~/Thasni/LINUX$ ls -a
+.  ..  Thasni.txt  d1,d2,d3,d4,d5  f1.txt  Student.class  Student.java
+mca@MCA11:~/Thasni/LINUX$ echo "hello world!1"
+echo "hello worldgcc set.c"
+hello worldgcc set.c
+
+4.echo
+
+mca@MCA11:~/Thasni/LINUX$ echo "THis is sample">f1.txt
+
+5.read
+
+mca@MCA11:~/Thasni/LINUX$ read a
+2
+mca@MCA11:~/Thasni/LINUX$ read b
+5
+mca@MCA11:~/Thasni/LINUX$ echo $a $b
+2 5
+mca@MCA11:~/Thasni/LINUX$ read -p "enter your name"
+enter your namesheena
+mca@MCA11:~/Thasni/LINUX$ 
+mca@MCA11:~/Thasni/LINUX$ 
+mca@MCA11:~/Thasni/LINUX$ 
+mca@MCA11:~/Thasni/LINUX$ 
+mca@MCA11:~/Thasni/LINUX$ read -p "enter your name: "
+enter your name: Thasni
+
+6.cat
+
+mca@MCA11:~/Thasni/LINUX$ cat f1.txt
+THis is sample
+mca@MCA11:~/Thasni/LINUX$ cat >f2.txt
+hi hwello 
+gud mng
+Thasni
+shahina
+alfiya
+rojina
+sabina
+^C
+mca@MCA11:~/Thasni/LINUX$ cat f1
+cat: f1: No such file or directory
+mca@MCA11:~/Thasni/LINUX$ cat f1.txt
+THis is sample
+mca@MCA11:~/Thasni/LINUX$ cat f2.txt
+hi hwello 
+gud mng
+Thasni
+shahina
+alfiya
+rojina
+sabina
+mca@MCA11:~/Thasni/LINUX$ cat >>f3.txt
+kcjjsh
+cjsdh^C
+mca@MCA11:~/Thasni/LINUX$ catr f3.txt
+Command 'catr' not found, did you mean:
+  command 'car' from deb ucommon-utils (7.0.1-0.1)
+  command 'catm' from deb mescc-tools (1.4.0-1)
+  command 'cat' from deb coreutils (9.4-3ubuntu6.1)
+  command 'ctr' from deb containerd (1.7.28-0ubuntu1~24.04.2)
+  command 'cstr' from deb liwc (1.21-2)
+Try: sudo apt install <deb name>
+mca@MCA11:~/Thasni/LINUX$ cat f3.txt
+kcjjsh
+mca@MCA11:~/Thasni/LINUX$ more  f2.txt
+hi hwello 
+gud mng
+Thasni
+shahina
+alfiya
+rojina
+sabina
+
+7.more
+
+mca@MCA11:~/Thasni/LINUX$ more -5 f2.txt
+hi hwello 
+gud mng
+Thasni
+shahina
+alfiya
+rojina
+sabina
+
+8.less
+
+mca@MCA11:~/Thasni/LINUX$ less f2.txt
+
+[4]+  Stopped                 less f2.txt
+mca@MCA11:~/Thasni/LINUX$ less f1.txt f2.txt
+
+[5]+  Stopped                 less f1.txt f2.txt
+mca@MCA11:~/Thasni/LINUX$ less -G f1.txt
+
+[6]+  Stopped                 less -G f1.txt
+
+9.cd
+
+mca@MCA11:~/Thasni/LINUX$ cd ..
+mca@MCA11:~/Thasni$ cd LINUX
+mca@MCA11:~/Thasni/LINUX$ cd skm
+bash: cd: skm: No such file or directory
+
+10.mkdir
+
+mca@MCA11:~/Thasni/LINUX$ mkdir  abc
+mca@MCA11:~/Thasni/LINUX$ mkdir xx yy zzz
+mca@MCA11:~/Thasni/LINUX$ ls
+abc	    d1,d2,d3,d4,d5  f2.txt  Student.class  xx  zzz
+Thasni.txt  f1.txt	    f3.txt  Student.java   yy
+mca@MCA11:~/Thasni/LINUX$ rmdir d1,d2,d3,d4,d5
+mca@MCA11:~/Thasni/LINUX$ ls
+abc	    f1.txt  f3.txt	   Student.java  yy
+Thasni.txt  f2.txt  Student.class  xx		 zzz
+
+11.find
+
+mca@MCA11:~/Thasni/LINUX$ find /Thasni/LINUX -name f1.txt
+find: ‘/Thasni/LINUX’: No such file or directory
+mca@MCA11:~/Thasni/LINUX$ finnd path -typr d
+Command 'finnd' not found, did you mean:
+  command 'find' from deb findutils (4.9.0-5)
+  command 'innd' from deb inn (1:1.7.2q-48)
+Try: sudo apt install <deb name>
+mca@MCA11:~/Thasni/LINUX$ finnd path -type d
+Command 'finnd' not found, did you mean:
+  command 'find' from deb findutils (4.9.0-5)
+  command 'innd' from deb inn (1:1.7.2q-48)
+Try: sudo apt install <deb name>
+mca@MCA11:~/Thasni/LINUX$ find -type d
+.
+./xx
+./abc
+./zzz
+./yy
+mca@MCA11:~/Thasni/LINUX$ find -type f
+./Student.class
+./Student.java
+./Thasni.txt
+./f3.txt
+./f1.txt
+./f2.txt
+
+12.cp
+
+mca@MCA11:~/Thasni/LINUX$ cp f1.txt f2.txt
+mca@MCA11:~/Thasni/LINUX$ cp f1.txt/aa
+cp: missing destination file operand after 'f1.txt/aa'
+Try 'cp --help' for more information.
+
+13.mv
+
+mca@MCA11:~/Thasni/LINUX$ mv f1.txt f3.txt
+mca@MCA11:~/Thasni/LINUX$ ls f3.txt
+f3.txt
+mca@MCA11:~/Thasni/LINUX$ mv tt ggg
+mv: cannot stat 'tt': No such file or directory
+mca@MCA11:~/Thasni/LINUX$ mkdir tt gg
+mca@MCA11:~/Thasni/LINUX$ mv tt ggg
+
+14.rm
+
+mca@MCA11:~/Thasni/LINUX$ rm file.txt
+rm: cannot remove 'file.txt': No such file or directory
+mca@MCA11:~/Thasni/LINUX$ rm f2.txt
+mca@MCA11:~/Thasni/LINUX$ ls 
+abc  Thasni.txt  f3.txt  gg  ggg  Student.class  Student.java  xx  yy  zzz
+mca@MCA11:~/Thasni/LINUX$ rm f1.txt f2.txt
+rm: cannot remove 'f1.txt': No such file or directory
+rm: cannot remove 'f2.txt': No such file or directory
+mca@MCA11:~/Thasni/LINUX$ rm xx yy
+rm: cannot remove 'xx': Is a directory
+rm: cannot remove 'yy': Is a directory
+mca@MCA11:~/Thasni/LINUX$ lsz
+Command 'lsz' not found, did you mean:
+  command 'lsd' from snap lsd (0.16.0)
+  command 'ls' from deb coreutils (9.4-3ubuntu6.1)
+  command 'lsw' from deb suckless-tools (47-1)
+  command 'lsh' from deb lsh-client (2.1-14)
+  command 'lrz' from deb lrzip (0.651-2ubuntu1)
+  command 'lsd' from deb lsd (0.23.1-8)
+  command 'lsc' from deb livescript (1.6.1+dfsg-3)
+  command 'lsm' from deb lsm (1.0.4-2)
+  command 'lz' from deb mtools (4.0.43-1)
+  command 'sz' from deb lrzsz (0.12.21-10)
+See 'snap info <snapname>' for additional versions.
+mca@MCA11:~/Thasni/LINUX$ ls
+abc  Thasni.txt  f3.txt  gg  ggg  Student.class  Student.java  xx  yy  zzz
+mca@MCA11:~/Thasni/LINUX$ rm gg
+rm: cannot remove 'gg': Is a directory
+mca@MCA11:~/Thasni/LINUX$ rm f3,txt
+rm: cannot remove 'f3,txt': No such file or directory
+mca@MCA11:~/Thasni/LINUX$ rm f3.txt
+mca@MCA11:~/Thasni/LINUX$ cat > f1.txt
+d
+d
+d
+d
+d
+d
+d
+d
+ewfwef
+ds
+fcsd
+f
+sdfsdf
+
+15.tar
+
+mca@MCA11:~/Thasni/LINUX$ tar -cvf abdc.tar aa
+tar: aa: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+mca@MCA11:~/Thasni/LINUX$ mkdir abcd.tar
+mca@MCA11:~/Thasni/LINUX$ tar -cvf abdc.tar 
+tar: Cowardly refusing to create an empty archive
+Try 'tar --help' or 'tar --usage' for more information.
+mca@MCA11:~/Thasni/LINUX$ tar -cvf abdc.tar aa
+tar: aa: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+
+16.wc
+
+mca@MCA11:~/Thasni/LINUX$ wc f1.txt
+13 13 40 f1.txt
+mca@MCA11:~/Thasni/LINUX$ wc -l f1.txt
+13 f1.txt
+mca@MCA11:~/Thasni/LINUX$ wc -w f1.txt
+13 f1.txt
+
+17.head
+
+mca@MCA11:~/Thasni/LINUX$ head  -n
+head: option requires an argument -- 'n'
+Try 'head --help' for more information.
+mca@MCA11:~/Thasni/LINUX$ head f1.txt
+d
+d
+d
+d
+d
+d
+d
+d
+ewfwef
+ds
+mca@MCA11:~/Thasni/LINUX$ head -5 f1.txt
+d
+d
+d
+d
+d
+mca@MCA11:~/Thasni/LINUX$ head -20 f1.txt
+d
+d
+d
+d
+d
+d
+d
+d
+ewfwef
+ds
+fcsd
+f
+sdfsdf
+
+18.tail
+
+mca@MCA11:~/Thasni/LINUX$ tail -5 f1.txt
+ewfwef
+ds
+fcsd
+f
+sdfsdf
+
+19.cut
+
+mca@MCA11:~/Thasni/LINUX$ cut -c 1-5 f1.txt
+d
+d
+d
+d
+d
+d
+d
+d
+ewfwe
+ds
+fcsd
+f
+sdfsd
+
+20.paste
+
+mca@MCA11:~/Thasni/LINUX$ paste -d f1.txt f2.txt
+paste: f2.txt: No such file or directory
+mca@MCA11:~/Thasni/LINUX$ cat > f2.txt
+jdfchnsd
+sdfcsdknksd
+sacjsdc
+asdbhdc
+sdcbsdcs
+dshsdijsd
+sdbcns
+dasads
+cs
+dc
+sdcs
+csd
+c
+sdc
+sc
+sc
+d
+csdmca@MCA11:~/Thasni/LINUX$ ls
+abc	  abdc.tar    f1.txt  gg   Student.class  xx  zzz
+abcd.tar  Thasni.txt  f2.txt  ggg  Student.java   yy
+mca@MCA11:~/Thasni/LINUX$ cat f1.txt
+d
+d
+d
+d
+d
+d
+d
+d
+ewfwef
+ds
+fcsd
+f
+sdfsdf
+mca@MCA11:~/Thasni/LINUX$ cat f2.txt\
+> cat f2.txt
+cat: f2.txtcat: No such file or directory
+jdfchnsd
+sdfcsdknksd
+sacjsdc
+asdbhdc
+sdcbsdcs
+dshsdijsd
+sdbcns
+dasads
+cs
+dc
+sdcs
+csd
+c
+sdc
+sc
+sc
+d
+csdmca@MCA11:~/Thasni/LINUX$ paste -d f1.txt f2.txt
+jdfchnsd
+sdfcsdknksd
+sacjsdc
+asdbhdc
+sdcbsdcs
+dshsdijsd
+sdbcns
+dasads
+cs
+dc
+sdcs
+csd
+c
+sdc
+sc
+sc
+d
+csd
+mca@MCA11:~/Thasni/LINUX$ cat f1.txt
+d
+d
+d
+d
+d
+d
+d
+d
+ewfwef
+ds
+fcsd
+f
+sdfsdf
+mca@MCA11:~/Thasni/LINUX$ cat f2.txt
+jdfchnsd
+sdfcsdknksd
+sacjsdc
+asdbhdc
+sdcbsdcs
+dshsdijsd
+sdbcns
+dasads
+cs
+dc
+sdcs
+csd
+c
+sdc
+sc
+sc
+d
+
+21.grep
+
+csdmca@MCA11:~/Thasni/LINUX$ grep "ilahia" f1.txt
+mca@MCA11:~/Thasni/LINUX$ more f1.txt
+d
+d
+d
+d
+d
+d
+d
+d
+ewfwef
+ds
+fcsd
+f
+sdfsdf
+mca@MCA11:~/Thasni/LINUX$ more f1.txt more f2.txt
+::::::::::::::
+f1.txt
+::::::::::::::
+d
+d
+d
+d
+d
+d
+d
+d
+ewfwef
+ds
+fcsd
+f
+sdfsdf
+more: cannot open more: No such file or directory
+--More--(Next file: f2.txt)
+[7]+  Stopped                 more f1.txt more f2.txt
+mca@MCA11:~/Thasni/LINUX$ grep -i "ilahia " f1.txt
+
+22.expr
+
+mca@MCA11:~/Thasni/LINUX$ expr 10+5
+10+5
+mca@MCA11:~/Thasni/LINUX$ expr 10 + 5
+15
+mca@MCA11:~/Thasni/LINUX$ expr 10 - 5
+5
+mca@MCA11:~/Thasni/LINUX$ expr 10 / 5
+2
+mca@MCA11:~/Thasni/LINUX$ expr 10 % 5
+0
+mca@MCA11:~/Thasni/LINUX$ expr length "Thasni"
+6
+
+23.chmod
+
+mca@MCA11:~/Thasni/LINUX$ chmod +rwx f1.txt
+mca@MCA11:~/Thasni/LINUX$ chmod chmod 755 file.sh
+chmod: invalid mode: ‘chmod’
+Try 'chmod --help' for more information.
+mca@MCA11:~/Thasni/LINUX$ chmod chmod 755 f1.txt
+chmod: invalid mode: ‘chmod’
+Try 'chmod --help' for more information.
+mca@MCA11:~/Thasni/LINUX$ chmod u+v f1.txt
+chmod: invalid mode: ‘u+v’
+Try 'chmod --help' for more information.
+
+24.chown
+
+mca@MCA11:~/Thasni/LINUX$ sudo chown user1 f1.txt
+[sudo] password for mca: 
+chown: invalid user: ‘user1’
+mca@MCA11:~/Thasni/LINUX$ sudo chown user1 f1.txt
+chown: invalid user: ‘user1’
+mca@MCA11:~/Thasni/LINUX$ mca
+Command 'mca' not found, did you mean:
+  command 'mcs' from snap maven-central-search (0.9.4)
+  command 'mcx' from deb mcl (1:22-282+ds-2)
+  command 'mma' from deb mma (21.09-1)
+  command 'mcs' from deb mono-mcs (6.8.0.105+dfsg-3.5ubuntu1)
+  command 'xca' from deb xca (2.5.0-1)
+  command 'mc' from deb mc (3:4.8.30-1ubuntu0.1)
+  command 'mco' from deb mcollective-client (2.12.5+dfsg-1.1)
+  command 'm-a' from deb module-assistant (0.11.11ubuntu1)
+  command 'pca' from deb eigensoft (8.0.0+dfsg-1)
+  command 'mcp' from deb mmv (2.5.1-1)
+  command 'mda' from deb mailutils-mda (1:3.16-1build1)
+  command 'mcd' from deb mtools (4.0.43-1)
+  command 'mcat' from deb mtools (4.0.43-1)
+  command 'mcl' from deb mcl (1:22-282+ds-2)
+  command 'mcv' from deb scotch (7.0.4-1)
+See 'snap info <snapname>' for additional versions.
+
+25.redirection >>
+
+mca@MCA11:~/Thasni/LINUX$ ls >f1.txt
+mca@MCA11:~/Thasni/LINUX$ lss f2.txt
+Command 'lss' not found, but there are 16 similar ones.
+mca@MCA11:~/Thasni/LINUX$ cat f2.txt
+jdfchnsd
+sdfcsdknksd
+sacjsdc
+asdbhdc
+sdcbsdcs
+dshsdijsd
+sdbcns
+dasads
+cs
+dc
+sdcs
+csd
+c
+sdc
+sc
+sc
+d
+csdmca@MCA11:~/Thasni/LINUX$ ls f2.txt
+f2.txt
+mca@MCA11:~/Thasni/LINUX$ cat f2.txt
+jdfchnsd
+sdfcsdknksd
+sacjsdc
+asdbhdc
+sdcbsdcs
+dshsdijsd
+sdbcns
+dasads
+cs
+dc
+sdcs
+csd
+c
+sdc
+sc
+sc
+d
+
+26.piping |
+
+csdmca@MCA11:~/Thasni/LINUX$ ls | wc -l
+14
+mca@MCA11:~/Thasni/LINUX$ ls | wc tail
+wc: tail: No such file or directory
+mca@MCA11:~/Thasni/LINUX$ ls -l | tail
+-rwxrwxr-x 1 mca mca   108 Mar  2 11:33 f1.txt
+-rw-rw-r-- 1 mca mca   102 Mar  2 11:19 f2.txt
+drwxrwxr-x 2 mca mca  4096 Mar  2 11:14 gg
+drwxrwxr-x 2 mca mca  4096 Mar  2 11:14 ggg
+-rw-rw-r-- 1 mca mca  7677 Mar  2 11:23 LINUXprogram.txt
+-rw-rw-r-- 1 mca mca  2204 Feb 25 09:44 Student.class
+-rw-rw-r-- 1 mca mca  1246 Feb 25 09:44 Student.java
+drwxrwxr-x 2 mca mca  4096 Mar  2 11:10 xx
+drwxrwxr-x 2 mca mca  4096 Mar  2 11:10 yy
+drwxrwxr-x 2 mca mca  4096 Mar  2 11:10 zzz
+
+27.useradd
+
+mca@MCA11:~/Thasni/LINUX$ sudo useradd f1
+mca@MCA11:~/Thasni/LINUX$ usermod  -u 1100 stuydent1
+usermod: user 'stuydent1' does not exist
+mca@MCA11:~/Thasni/LINUX$ usermod  -u 1100 f1
+usermod: Permission denied.
+
+28.passwd
+
+usermod: cannot lock /etc/passwd; try again later.
+mca@MCA11:~/Thasni/LINUX$ passwd -S f1.txt
+passwd: user 'f1.txt' does not exist
+mca@MCA11:~/Thasni/LINUX$ passwd -S f1
+passwd: You may not view or modify password information for f1.
+mca@MCA11:~/Thasni/LINUX$ mkdir student1
+
+30.userdel
+
+mca@MCA11:~/Thasni/LINUX$ userdel student1
+userdel: user 'student1' does not exist
+mca@MCA11:~/Thasni/LINUX$ cd ..
+mca@MCA11:~/Thasni$ cd ..
+mca@MCA11:~$ userdel student1
+userdel: user 'student1' does not exist
+mca@MCA11:~$ cd Thasni
+mca@MCA11:~/Thasni$ cd LINUX
+
+31.df
+
+mca@MCA11:~/Thasni/LINUX$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.6G  2.4M  1.6G   1% /run
+/dev/nvme0n1p6  181G   44G  128G  26% /
+tmpfs           7.7G     0  7.7G   0% /dev/shm
+tmpfs           5.0M  8.0K  5.0M   1% /run/lock
+efivarfs        256K  127K  125K  51% /sys/firmware/efi/efivars
+/dev/nvme0n1p1   96M   33M   64M  34% /boot/efi
+tmpfs           1.6G  128K  1.6G   1% /run/user/1000
+mca@MCA11:~/Thasni/LINUX$ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+tmpfs            1605128     2384   1602744   1% /run
+/dev/nvme0n1p6 188768352 45841544 133265112  26% /
+tmpfs            8025640        0   8025640   0% /dev/shm
+tmpfs               5120        8      5112   1% /run/lock
+efivarfs             256      127       125  51% /sys/firmware/efi/efivars
+/dev/nvme0n1p1     98304    33338     64966  34% /boot/efi
+tmpfs            1605128      128   1605000   1% /run/user/1000
+
+32.ps
+
+mca@MCA11:~/Thasni/LINUX$ \ps -e
+    PID TTY          TIME CMD
+      1 ?        00:00:01 systemd
+      2 ?        00:00:00 kthreadd
+      3 ?        00:00:00 pool_workqueue_release
+      4 ?        00:00:00 kworker/R-rcu_gp
+      5 ?        00:00:00 kworker/R-sync_wq
+      6 ?        00:00:00 kworker/R-kvfree_rcu_reclaim
+      7 ?        00:00:00 kworker/R-slub_flushwq
+      8 ?        00:00:00 kworker/R-netns
+     10 ?        00:00:00 kworker/0:0H-events_highpri
+     13 ?        00:00:00 kworker/R-mm_percpu_wq
+     14 ?        00:00:00 ksoftirqd/0
+     15 ?        00:00:04 rcu_preempt
+     16 ?        00:00:00 rcu_exp_par_gp_kthread_worker/0
+     17 ?        00:00:00 rcu_exp_gp_kthread_worker
+     18 ?        00:00:00 migration/0
+     19 ?        00:00:00 idle_inject/0
+     20 ?        00:00:00 cpuhp/0
+     21 ?        00:00:00 cpuhp/2
+     22 ?        00:00:00 idle_inject/2
+     23 ?        00:00:00 migration/2
+     24 ?        00:00:00 ksoftirqd/2
+     26 ?        00:00:00 kworker/2:0H-events_highpri
+     27 ?        00:00:00 cpuhp/4
+     28 ?        00:00:00 idle_inject/4
+     29 ?        00:00:00 migration/4
+     30 ?        00:00:00 ksoftirqd/4
+     32 ?        00:00:00 kworker/4:0H-events_highpri
+     33 ?        00:00:00 cpuhp/6
+     34 ?        00:00:00 idle_inject/6
+     35 ?        00:00:00 migration/6
+     36 ?        00:00:00 ksoftirqd/6
+     38 ?        00:00:00 kworker/6:0H-events_highpri
+     39 ?        00:00:00 cpuhp/8
+     40 ?        00:00:00 idle_inject/8
+     41 ?        00:00:00 migration/8
+     42 ?        00:00:00 ksoftirqd/8
+     44 ?        00:00:00 kworker/8:0H-events_highpri
+     45 ?        00:00:00 cpuhp/10
+     46 ?        00:00:00 idle_inject/10
+     47 ?        00:00:00 migration/10
+     48 ?        00:00:00 ksoftirqd/10
+     50 ?        00:00:00 kworker/10:0H-events_highpri
+     51 ?        00:00:00 cpuhp/12
+     52 ?        00:00:00 idle_inject/12
+     53 ?        00:00:00 migration/12
+     54 ?        00:00:00 ksoftirqd/12
+     56 ?        00:00:00 kworker/12:0H-events_highpri
+     57 ?        00:00:00 cpuhp/13
+     58 ?        00:00:00 idle_inject/13
+     59 ?        00:00:00 migration/13
+     60 ?        00:00:00 ksoftirqd/13
+     62 ?        00:00:00 kworker/13:0H-events_highpri
+     63 ?        00:00:00 cpuhp/14
+     64 ?        00:00:00 idle_inject/14
+     65 ?        00:00:00 migration/14
+     66 ?        00:00:00 ksoftirqd/14
+     68 ?        00:00:00 kworker/14:0H-events_highpri
+     69 ?        00:00:00 cpuhp/15
+     70 ?        00:00:00 idle_inject/15
+
+mca@MCA11:~/Thasni/LINUX$ ps -ef
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 10:52 ?        00:00:01 /sbin/init splash
+root           2       0  0 10:52 ?        00:00:00 [kthreadd]
+root           3       2  0 10:52 ?        00:00:00 [pool_workqueue_release
+root           4       2  0 10:52 ?        00:00:00 [kworker/R-rcu_gp]
+root           5       2  0 10:52 ?        00:00:00 [kworker/R-sync_wq]
+root           6       2  0 10:52 ?        00:00:00 [kworker/R-kvfree_rcu_r
+root           7       2  0 10:52 ?        00:00:00 [kworker/R-slub_flushwq
+root           8       2  0 10:52 ?        00:00:00 [kworker/R-netns]
+root          10       2  0 10:52 ?        00:00:00 [kworker/0:0H-events_hi
+root          13       2  0 10:52 ?        00:00:00 [kworker/R-mm_percpu_wq
+root          14       2  0 10:52 ?        00:00:00 [ksoftirqd/0]
+root          15       2  0 10:52 ?        00:00:04 [rcu_preempt]
+root          16       2  0 10:52 ?        00:00:00 [rcu_exp_par_gp_kthread
+root          17       2  0 10:52 ?        00:00:00 [rcu_exp_gp_kthread_wor
+root          18       2  0 10:52 ?        00:00:00 [migration/0]
+root          19       2  0 10:52 ?        00:00:00 [idle_inject/0]
+root          20       2  0 10:52 ?        00:00:00 [cpuhp/0]
+root          21       2  0 10:52 ?        00:00:00 [cpuhp/2]
+mca@MCA11:~/Thasni/LINUX$ ps -u username
+error: user name does not exist
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+
+33.top
+
+mca@MCA11:~/Thasni/LINUX$ top -d 5
+
+top - 11:39:04 up 46 min,  1 user,  load average: 0.58, 0.63, 0.58
+Tasks: 363 total,   1 running, 354 sleeping,   8 stopped,   0 zombie
+%Cpu(s):   1.0/0.4     1[                                                ] 
+MiB Mem :  15675.1 total,   7836.7 free,   3385.5 used,   5027.8 buff/cache
+MiB Swap:   4096.0 total,   4096.0 free,      0.0 used.  12289.6 avail Mem 
+Change delay from 5.0 to sh
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ 
+ 
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 
+     13 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 
+     14 root      20   0       0      0      0 S   0.0   0.0   0:00.06 
+[8]+  Stopped                 top -d 5
+mca@MCA11:~/Thasni/LINUX$ user@192.168.1.10
+user@192.168.1.10: command not found
+mca@MCA11:~/Thasni/LINUX$ ssh user@192.168.1.10
+
+34.ssh
+
+ssh: connect to host 192.168.1.10 port 22: No route to host
+
+35.ssp
+
+mca@MCA11:~/Thasni/LINUX$ scp -r 
+usage: scp [-346ABCOpqRrsTv] [-c cipher] [-D sftp_server_path] [-F ssh_config]
+           [-i identity_file] [-J destination] [-l limit] [-o ssh_option]
+           [-P port] [-S program] [-X sftp_option] source ... target
+           
+36.ss keygen
+
+mca@MCA11:~/Thasni/LINUX$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/mca/.ssh/id_ed25519): ssh-keygen -t rsa -b 4096
+Enter passphrase (empty for no passphrase): 
+
+[9]+  Stopped                 ssh-keygen
+
+37.ssh-copy-id
+mca@MCA11:~/Thasni/LINUX$ ssh-copy-id user@192.168.1.10
+/usr/bin/ssh-copy-id: ERROR: No identities found
+mca@MCA11:~/Thasni/LINUX$ passwd -l student1
+passwd: Permission denied.
+mca@MCA11:~/Thasni/LINUX$ sudo passwd -l student1
+passwd: user 'student1' does not exist
+
+29.usermod
+
+mca@MCA11:~/Thasni/LINUX$ useradd student1
+useradd: Permission denied.
+useradd: cannot lock /etc/passwd; try again later.
+mca@MCA11:~/Thasni/LINUX$ sudo useradd student1
+mca@MCA11:~/Thasni/LINUX$ sudo passwd -l student1
+passwd: password changed.
+mca@MCA11:~/Thasni/LINUX$ 
+
